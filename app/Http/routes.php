@@ -25,5 +25,18 @@ Route::post('/proses_regis', ['as' =>  'proses-regis', 'uses' => 'RegisterContro
 Route::get('/home', ['as' =>  'home-index', 'uses' => 'BerandaController@index' ]);
 
 
-// Page Master Area
-Route::get('/area', ['as' =>  'area-index', 'uses' => 'AreaController@index' ]);
+// Page Master Barang
+Route::resource('master_item', 'master_itemController',[
+	'names' =>['index' => 'master-item','create' => 'master-item-create', 'edit' => 'master-item-edit', 'show' => 'master-item-show']
+	]);
+
+//Page Master Area
+Route::resource('master_area', 'master_areaController',[
+	'names' =>['index' => 'master-area','create' => 'master-area-create', 'edit' => 'master-area-edit','show' => 'master-area-show']
+	]);
+
+//Page Master Kategori Barang
+Route::resource('master_kategori_barang', 'master_kategori_barangController',[
+	'names' =>['index' => 'master-kategori-barang','create' => 'master-kategori-barang-create', 'edit' => 'master-kategori-barang-edit', 'show' => 'master-kategori-barang-show']
+	]);
+

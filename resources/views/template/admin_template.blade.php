@@ -42,9 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                {!! Breadcrumbs::render() !!}
-            </h1>
+            <h1>{!! Breadcrumbs::render() !!}</h1>
         </section>
 
         <!-- Main content -->
@@ -72,7 +70,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('/bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('/bower_components/custom/custom.js') }}"></script>
 <script src="{{ asset('/bower_components/AdminLTE/plugins/fastclick/fastclick.min.js') }}"></script>
-<script src="{{ asset('/bower_components/AdminLTE/dist/js/app.min.js') }}"></script>
    <script>
        $(function () {
             $('#datatable').DataTable();

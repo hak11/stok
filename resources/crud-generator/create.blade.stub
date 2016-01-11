@@ -1,0 +1,29 @@
+@extends('template.admin_template')
+
+@section('content')
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            <div class="col-md-6">
+                {!! Form::open(['url' => '%%routeGroup%%%%crudName%%', 'class' => 'form-horizontal']) !!}
+
+                %%formFieldsHtml%%
+
+                <div class="form-group pull-right">
+                    {!! Form::submit('Tambah', ['class' => 'btn btn-primary']) !!} ||
+                    <a href="{{ url('%%routeGroup%%%%crudName%%') }}" class="btn btn-warning" tabindex="6">Kembali</a>
+                </div>
+                {!! Form::close() !!}
+            </div><!-- col-md-6 -->
+
+            <div class="col-md-6">
+                    @if(Session::has('message'))
+                        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> <i class="icon fa fa-check"></i>{{ Session::get('message') }}</p>
+                    @endif
+            </div>
+        </div><!-- box body -->
+    </div><!-- box - primary -->
+@endsection
